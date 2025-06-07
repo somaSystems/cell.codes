@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <!-- Existing head content from your index.html -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    
+    <!-- Blog-specific styles -->
+    <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}">
+    
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: inherit;">
+                cell.codes
+            </a>
+            <span>Lucas Dent | Researcher | Computational Cell Biology</span>
+        </h1>
+        <img src="{{ '/smooth_cellMove_aspect_on_lots.gif' | relative_url }}" alt="Lucas Dent cell.codes GIF">
+    </header>
+    
+    <nav>
+        <a href="{{ '/' | relative_url }}">
+            <i class="fas fa-home"></i>Home
+        </a>
+        <a href="{{ '/blog/' | relative_url }}">
+            <i class="fas fa-blog"></i>Blog
+        </a>
+        <a href="https://scholar.google.com/citations?user=YXZ3YBkAAAAJ&hl=en" target="_blank">
+            <i class="fas fa-graduation-cap"></i>Research
+        </a>
+        <a href="https://github.com/somaSystems/" target="_blank">
+            <i class="fab fa-github"></i>Codes
+        </a>
+        <a href="https://www.linkedin.com/in/lucasdent/" target="_blank">
+            <i class="fab fa-linkedin"></i>Connections
+        </a>
+    </nav>
+    
+    <main>
+        {{ content }}
+    </main>
+    
+    <footer>
+        <p>© 2025 Lucas Dent | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
